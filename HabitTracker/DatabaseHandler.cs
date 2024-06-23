@@ -6,6 +6,7 @@ namespace Habit_Tracker
 {
     internal class DatabaseHandler
     {
+        Environment.GetEnvironmentVariable("password");
         private string connectionString = ConfigurationManager.ConnectionStrings["HabitTracker"].ConnectionString;
 
         public DatabaseHandler()
