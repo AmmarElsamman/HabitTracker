@@ -6,7 +6,6 @@ namespace Habit_Tracker
 {
     internal class DatabaseHandler
     {
-        Environment.GetEnvironmentVariable("password");
         private string connectionString = ConfigurationManager.ConnectionStrings["HabitTracker"].ConnectionString;
 
         public DatabaseHandler()
@@ -200,7 +199,7 @@ namespace Habit_Tracker
                 connection.Open();
                 var insertCmd = connection.CreateCommand();
 
-                insertCmd.CommandText = $"INSERT INTO record(habit_id, date, quantity) VALUES ({habit_id}, '{date}', {quantity})";
+                insertCmd.CommandText = $"INSERT INTO record(habit_id, date, quantity) VALUES ({habit_id}, '{date}', {quantity}) ON CONFLICT (habit_id,date) DO UPDATE SET quantity = record.quantity + {quantity}";
 
                 insertCmd.ExecuteNonQuery();
 
