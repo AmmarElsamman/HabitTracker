@@ -25,8 +25,8 @@ Developed using C# and Postgres.
 * CRUD DB functions
 
   - From the main menu users can Create, Read, Update or Delete entries for whichever date they want, entered in dd-MM-yy format.
-  - Inserting same habit on the same day will result in only incrementing the quantity. 
-	- Time and Dates inputted are checked to make sure they are in the correct and realistic format.
+  - Inserting same habit on the same day will result in only incrementing the quantity.
+  - Time and Dates inputted are checked to make sure they are in the correct and realistic format.
 
 * Basic Reporting of Records
 
